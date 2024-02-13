@@ -1,11 +1,11 @@
 import React from 'react'
-import { Avatar, Box, IconButton, Typography} from '@mui/material'
+import { Avatar, Box, IconButton, Typography, Grid} from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search'
 import MoreVert from '@mui/icons-material/MoreVert'
 import VideocamIcon from '@mui/icons-material/Videocam';
 export default function RAppBar() {
     return (
-        <Box width={'100%'} height={'100%'} alignItems={"center"}>
+        <Grid width={'100%'} height={'100%'} alignItems={"center"}>
             <Box bgcolor={'#1f2c33'} display={'flex'} justifyContent={'space-between'} flexDirection={'row'} height={'9vh'} border={'1px solid #1f2c33'} p={'10px 10px'}>
                 <Box display={'flex'}>
                     <Avatar />
@@ -14,7 +14,7 @@ export default function RAppBar() {
                         <Typography variant='caption' color={'green'}>Online</Typography>
                     </Box>
                 </Box>
-                <Box height={"100%"} textAlign={'center'} ml={3}>
+                <Box height={"100%"} textAlign={'center'} ml={3} display={'flex'} flexDirection={'row'}>
 
                     <IconButton>
                         <VideocamIcon sx={{ color: "white" }} />
@@ -31,6 +31,6 @@ export default function RAppBar() {
                 </Box>
             </Box>
 
-        </Box>
+        </Grid>
     )
 }

@@ -1,7 +1,8 @@
 import React from 'react'
 import LeftComponent from './LeftComponent'
 import RightComponent from './RightComponent'
-import {Box} from '@mui/material'
+import {Box, Grid} from '@mui/material'
+import { useState } from 'react'
 
 export default function HomePage() {
 
@@ -19,13 +20,20 @@ export default function HomePage() {
         {id:10, name:"Shejal Bhosale", contactNo:"7219000099", msg :"As ast ka bhai."},
     ]
 
-    return (
-        <Box display='flex' flexDirection={'row'} height={'100vh'} width={'100vw'}>
 
-            <LeftComponent Contactlist={Contactlist}/>
+    const [sContact, setsContact] = useState({})
+
+    function disp(e){
+        setsContact({})
+    }
+
+    return (
+        <Grid display='flex' flexDirection={'row'} height={'100vh'}>
+
+            <LeftComponent Contactlist={Contactlist} sContact={sContact} setsContact={setsContact}/>
             <Box sx={{border:".05px solid #2f3b44"}}/>
             <RightComponent />
                       
-        </Box>
+        </Grid>
     )
 }

@@ -6,7 +6,7 @@ import ChatDisp from './Right/ChatDisp'
 export default function RightComponent() {
   return (
     <Box backgroundColor={"#1f2c33"} height={'100%'} width='70%' display="flex" justifyContent="center" flexDirection={'column'}>
-        <RAppBar/>    
+        <RAppBar />    
         <ChatDisp/>
         <Rfooter/>
     </Box>

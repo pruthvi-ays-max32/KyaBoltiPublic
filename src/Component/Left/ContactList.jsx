@@ -4,14 +4,18 @@ export default function ContactList(props) {
   let Contactlist = props.Contactlist
 
   return (
-    <Box display={'flex'}>
+    <Box display={'flex'}  flexDirection='column'>
       <List sx={{maxHeight: '80vh', overflowY: 'scroll', scrollbarWidth:'thin'}}>
           {Contactlist.map((contact, index)=>(
             <>
-            <ListItem key={index}>
+            <ListItem key={index} >
               <Box display={'flex'} flexDirection={'row'}>
                 <Avatar/>
-                <Box display={'flex'} flexDirection={'column'} ml={2} >
+                <Box display={'flex'} flexDirection={'column'} ml={2} onClick={()=>{
+                  let newObj = contact;
+                  console.log(newObj)
+                  return newObj;
+                }}>
                   <Box>
                   <Typography variant='body1' color={'white'}> {contact.name} </Typography>
                   </Box>

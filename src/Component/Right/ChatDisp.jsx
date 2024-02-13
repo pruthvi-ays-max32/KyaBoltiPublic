@@ -1,5 +1,5 @@
 import React from 'react'
-import {Box} from '@mui/material'
+import {Grid} from '@mui/material'
 import chatbg from './chatbg.png'
 export default function ChatDisp() {
 
@@ -9,8 +9,8 @@ export default function ChatDisp() {
     }
   };
   return (
-    <Box height={'600vh'} width={"100%"} sx={{ml:4}}> 
-          Hellojhjghkk
-     </Box>
+    <Grid> 
+          Hellojhjghkksdaflkj;kfdj;laksjfl;skjfl;kjajsl;fjwie;oijweknfaoij'
+     </Grid>
   )
 }
