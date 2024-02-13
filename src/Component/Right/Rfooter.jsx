@@ -6,15 +6,23 @@ import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import SendIcon from '@mui/icons-material/Send';
 import {InputBase} from '@mui/material';
 
+import { useState } from 'react';
 
 
+export default function Rfooter(props) {
 
-export default function Rfooter() {
+function updateRply(e){
+  // console.log(e.target.value)
+  props.setrply(e.target.value)
+}
+
+
   return (
-    <Grid xs={12} sm={10} md={8} lg={6} width={'100%'} height={'12vh'} alignItems={"center"} bgcolor={'#1f2c33'} display={'flex'} justifyContent={'space-between'}>
-        <Box textAlign={'start'} display={'flex'} flexDirection={'row'}>
+    <Grid width={'100%'} alignItems={"center"}  display={'flex'} justifyContent={'space-between'} sx={{alignItems:'center'}} >
+        <Box textAlign={'start'} display={'flex'} flexDirection={'row'} m={1}>
         <IconButton>
             <InsertEmoticonIcon sx={{
+              justifyItems:"center",
               color:"white"
             }}/>
           </IconButton>
@@ -24,31 +32,36 @@ export default function Rfooter() {
               color:"white"
             }} />
           </IconButton>
-
-          
+       
         </Box>
 
         <Box width={"80%"} textAlign={"center"}>
-          <InputBase  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"solid grey", border:'1px solid grey', borderRadius:'6px'}}></InputBase>
+          <InputBase  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"#2A3942", border:'0.5px solid grey', borderRadius:'6px'}} onChange={updateRply}></InputBase>
         </Box>
 
         <Box display={'flex'} flexDirection={'row'}>     
-          <IconButton>
+          {/* <IconButton>
             <KeyboardVoiceIcon sx={{
               color:"white"
             }} />
-          </IconButton>
+          </IconButton> */}
           
-        <IconButton>
+        <IconButton onClick={()=>{
+
+        }}>
             <SendIcon sx={{
               color:"white"
             }} />
           </IconButton>
-        </Box>
-          
-      
+        </Box>   
         </Grid>
-    
-  
   )
 }
+
+
+
+
+
+// backgroundColor={"#202C33"} chat bg
+
+// bgcolor={'#1f2c33'} footer
