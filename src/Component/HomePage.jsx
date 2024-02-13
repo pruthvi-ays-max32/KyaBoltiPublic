@@ -13,7 +13,7 @@ export default function HomePage() {
         {id:3, name:"Panda", contactNo:"8787876692", msg : "Hey Panda Muskadin."},
         {id:4, name: "Ayesha Shaikh", contactNo : "1182451433", msg:"Maar khatos bagh"},
         {id:5, name:"Praneeth Shetty", contactNo:"7219000099", msg :"Mag Kas chalu ahe."},
-        {id:6, name:"Vinay Ghate", contactNo:"8888886692", msg : "Patience is main ingredient to make a cup of Chai."},
+        {id:6, name:"Vinay Ghate", contactNo:"8888886692", msg : "Tu bhet room madhe tula dakhvto."},
         {id:7, name:"Abhishek Dhande", contactNo:"721907384", msg :"we are just friends.."},
         {id:8, name:"Yashu Shah", contactNo:"8787876692", msg : "Te Hod lai yedi bai ahe baba."},
         {id:9, name: "Vaishi Kad", contactNo : "1182451433", msg:"swata lai dhagala tekl aslya sarkh boltos"},
