@@ -13,7 +13,7 @@ export default function HomePage() {
         {id:3, name:"Panda", contactNo:"8787876692", msg : "Hey Panda Muskadin."},
         {id:4, name: "Ayesha Shaikh", contactNo : "1182451433", msg:"Maar khatos bagh"},
         {id:5, name:"Praneeth Shetty", contactNo:"7219000099", msg :"Mag Kas chalu ahe."},
-        {id:6, name:"Vinay Ghate", contactNo:"8888886692", msg : "Tu bhet room madhe tula dakhvto."},
+        {id:6, name:"Vinay Ghate", contactNo:"8888886692", msg : "Patience is main ingredient to make a cup of Chai."},
         {id:7, name:"Abhishek Dhande", contactNo:"721907384", msg :"we are just friends.."},
         {id:8, name:"Yashu Shah", contactNo:"8787876692", msg : "Te Hod lai yedi bai ahe baba."},
         {id:9, name: "Vaishi Kad", contactNo : "1182451433", msg:"swata lai dhagala tekl aslya sarkh boltos"},
@@ -21,19 +21,18 @@ export default function HomePage() {
     ]
 
 
-    const [sContact, setsContact] = useState({})
+    const [sContact, setsContact] = useState(null)
+    // console.log("%%%%%%%%%%%%%%",sContact)
 
-    function disp(e){
-        setsContact({})
-    }
+    
 
     return (
-        <Grid display='flex' flexDirection={'row'} height={'100vh'}>
+        <Box display='flex' flexDirection={'row'} height={'100vh'} width={'100%'}>
 
             <LeftComponent Contactlist={Contactlist} sContact={sContact} setsContact={setsContact}/>
             <Box sx={{border:".05px solid #2f3b44"}}/>
-            <RightComponent />
+            <RightComponent sContact={sContact}/>
                       
-        </Grid>
+        </Box>
     )
 }

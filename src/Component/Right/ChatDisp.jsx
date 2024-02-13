@@ -1,16 +1,21 @@
 import React from 'react'
-import {Grid} from '@mui/material'
-import chatbg from './chatbg.png'
-export default function ChatDisp() {
+import {Grid, Box} from '@mui/material'
+export default function ChatDisp(props) {
 
-  const styles = {
-    paperContainer : {
-      backgroundImage : `url(${chatbg})`
-    }
-  };
-  return (
-    <Grid> 
-          Hellojhjghkksdaflkj;kfdj;laksjfl;skjfl;kjajsl;fjwie;oijweknfaoij'
-     </Grid>
-  )
+
+  let x = props.sContact[2].messages[0].msg
+  console.log("{{{{{{{{{{{{{{{{{{", x)
+
+ 
+  
+ 
+    return (
+      <Box m={2}> 
+           
+           {/* <Box color={'white'}>{x.msg}</Box>
+          */}
+       </Box>
+    )
+  
+  
 }
