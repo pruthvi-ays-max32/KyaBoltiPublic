@@ -11,11 +11,6 @@ import { useState } from 'react';
 
 export default function Rfooter(props) {
 
-function updateRply(e){
-  console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++",e)
-  props.setrply(e.target.value)
-}
-
 
   return (
     <Grid width={'100%'} alignItems={"center"}  display={'flex'} justifyContent={'space-between'} sx={{alignItems:'center'}} >
@@ -37,7 +32,7 @@ function updateRply(e){
 
         <Box width={"80%"} textAlign={"center"}>
           <InputBase  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"#2A3942", border:'0.5px solid grey', borderRadius:'6px'}} onChange={(e)=>{
-              updateRply(e)
+              props.updateRply(e)
           }}></InputBase>
         </Box>
 
@@ -48,7 +43,9 @@ function updateRply(e){
             }} />
           </IconButton> */}
           
-        <IconButton onClick={props.display}>
+        <IconButton onClick={()=>{
+            props.display()
+        }}>
             <SendIcon sx={{
               color:"white"
             }} />

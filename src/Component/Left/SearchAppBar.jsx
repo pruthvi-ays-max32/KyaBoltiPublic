@@ -4,7 +4,10 @@ import SearchIcon from '@mui/icons-material/Search'
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { InputBase } from '@mui/material';
 
-export default function SearchAppBar() {
+export default function SearchAppBar(props) {
+
+  
+
   return (
     <Grid display={'flex'} flexDirection={'row'} justifyContent={'space-between'} sx={{ bgcolor: '#111B21'}}>
       <Box width={'100%'} display={'flex'} margin={1} sx={{ bgcolor: '#111B21', height: "8vh" }}>
@@ -12,7 +15,11 @@ export default function SearchAppBar() {
           <IconButton>
             <SearchIcon sx={{ color: "white", height: "20px" }} />
           </IconButton>
-          <InputBase placeholder='search or start a new chat' sx={{ width: "100%", color: 'white' }}></InputBase>
+          <InputBase placeholder='search or start a new chat' sx={{ width: "100%", color: 'white' }} 
+          onChange={(e)=>{
+            props.search(e)
+            }}>
+            </InputBase>
         </Box>
         <Box>
           <IconButton>
