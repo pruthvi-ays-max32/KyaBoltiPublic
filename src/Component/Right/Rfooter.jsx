@@ -10,7 +10,12 @@ import { useState } from 'react';
 
 
 export default function Rfooter(props) {
+  const [messageArr, setmessageArr] = useState("")
+  console.log("$$$$$$$$$$$$$$$$$$$", messageArr)
 
+  function updateRply(e) {
+      setmessageArr(e.target.value)
+  }
 
   return (
     <Grid width={'100%'} alignItems={"center"}  display={'flex'} justifyContent={'space-between'} sx={{alignItems:'center'}} >
@@ -31,8 +36,8 @@ export default function Rfooter(props) {
         </Box>
 
         <Box width={"80%"} textAlign={"center"}>
-          <InputBase  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"#2A3942", border:'0.5px solid grey', borderRadius:'6px'}} onChange={(e)=>{
-              props.updateRply(e)
+          <InputBase value={messageArr}  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"#2A3942", border:'0.5px solid grey', borderRadius:'6px'}} onChange={(e)=>{
+              updateRply(e)
           }}></InputBase>
         </Box>
 
@@ -44,7 +49,9 @@ export default function Rfooter(props) {
           </IconButton> */}
           
         <IconButton onClick={()=>{
-            props.display()
+            props.display(messageArr)
+            setmessageArr("")
+
         }}>
             <SendIcon sx={{
               color:"white"
@@ -54,11 +61,3 @@ export default function Rfooter(props) {
         </Grid>
   )
 }
-
-
-
-
-
-// backgroundColor={"#202C33"} chat bg
-
-// bgcolor={'#1f2c33'} footer

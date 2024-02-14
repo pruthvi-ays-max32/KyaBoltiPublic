@@ -19,8 +19,8 @@ export default function LeftComponent(props) {
     <Grid backgroundColor={"#1f2c33"} sx={{width:"30%", height:"100%"}}> 
         <LAppBar/>
         <Divider variant='fullWidth' sx={{bgcolor:"#1f2c33"}}></Divider>
-        <SearchAppBar Contactlist={props.Contactlist} search={search}/>
-        <ContactList Contactlist={props.Contactlist} sContact={props.sContact} selectContact={props.selectContact} searchText={searchText} clonearray={props.clonearray}/>
+        <SearchAppBar search={search}/>
+        <ContactList sContact={props.sContact} selectContact={props.selectContact} searchText={searchText} clonearray={props.clonearray}/>
     </Grid>
   )
 }

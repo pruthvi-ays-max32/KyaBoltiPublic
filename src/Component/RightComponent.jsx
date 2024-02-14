@@ -35,7 +35,7 @@ export default function RightComponent(props) {
         </Box>
 
         <Box height={'9vh'} width={'100%'} bgcolor={'#1f2c33'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>
-          <Rfooter messageArr={props.messageArr} updateRply={props.updateRply} display={props.display}/>
+          <Rfooter display={props.display}/>
         </Box>
 
       </Box>

@@ -3,6 +3,7 @@ import { Box, Typography, List, ListItem, Paper } from '@mui/material'
 export default function ChatDisp(props) {
 
   const messages = props.sContact.messages;
+  
 
   
 

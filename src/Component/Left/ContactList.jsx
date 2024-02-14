@@ -2,9 +2,7 @@ import React from 'react'
 import { Avatar, Box, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography,  } from '@mui/material'
 
 import DoneIcon from '@mui/icons-material/Done';
-export default function ContactList(props) {
-   
-    
+export default function ContactList(props) { 
 
     const FilterArray = props.clonearray.filter((contact)=>
       contact.name.toLowerCase().includes(props.searchText.toLowerCase())
@@ -15,7 +13,7 @@ export default function ContactList(props) {
         <List sx={{ maxHeight: '77vh', overflowY: 'scroll', scrollbarWidth: 'thin', width:"100%"}}>
           {FilterArray.map((contact, index) => (
             <>
-              <ListItem sx={{width:'400px'}} key={index} onClick={() => {
+              <ListItem sx={{width:'100%'}} key={index} onClick={() => {
                 // console.log("??????????????",contact)
                 props.selectContact(contact)
               }}>
