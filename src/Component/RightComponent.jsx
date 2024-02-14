@@ -23,7 +23,9 @@ export default function RightComponent(props) {
   const [rply, setrply] = useState(null)
   console.log("$$$$$$$$$$$$$$$$$$$", rply)
 
-  
+  function display(){
+    console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ", rply)
+  }
 
   if (props.sContact !== null) {
     return (
@@ -34,11 +36,11 @@ export default function RightComponent(props) {
         </Box>
 
         <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh"}}>
-          <ChatDisp sContact={props.sContact} />
+          <ChatDisp sContact={props.sContact} rply={rply} display={display}/>
         </Box>
 
         <Box height={'9vh'} width={'100%'} bgcolor={'#1f2c33'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>
-          <Rfooter rply={rply} setrply={setrply} />
+          <Rfooter rply={rply} setrply={setrply} display={display}/>
         </Box>
 
       </Box>
@@ -47,7 +49,7 @@ export default function RightComponent(props) {
 
   else {
     return (
-      <Box style={containerStyle} backgroundColor={"222E35"} sx={{width:"70%", height:"100%"}} display="flex" >
+      <Box style={containerStyle} backgroundColor={"222E35"} sx={{width:"70%", height:"100vh"}} display="flex" >
 
       </Box>
     )

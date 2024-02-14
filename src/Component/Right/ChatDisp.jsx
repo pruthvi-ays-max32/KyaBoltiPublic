@@ -1,19 +1,17 @@
 import React from 'react'
-import {Grid, Box} from '@mui/material'
+import {Grid, Box, Typography} from '@mui/material'
 export default function ChatDisp(props) {
-
-
-  let x = props.sContact[2].messages[0].msg
-  console.log("{{{{{{{{{{{{{{{{{{", x)
-
- 
-  
  
     return (
-      <Box m={2}> 
+      <Box m={2} display={'flex'} justifyContent={'flex-end'}> 
            
-           {/* <Box color={'white'}>{x.msg}</Box>
-          */}
+           <Box color={'white'} >
+                {props.sContact.messages[0].msg}
+            </Box>
+            <Box>
+              <Typography variant="caption" color={'whitesmoke'}>{props.sContact.messages[0].time}</Typography>
+            </Box>
+        
        </Box>
     )
   
