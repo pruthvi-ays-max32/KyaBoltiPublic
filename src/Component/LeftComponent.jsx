@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid, Divider} from '@mui/material'
+import {Divider, Stack} from '@mui/material'
 import LAppBar from './Left/LAppBar'
 import ContactList from './Left/ContactList'
 import SearchAppBar from './Left/SearchAppBar'
@@ -16,11 +16,11 @@ export default function LeftComponent(props) {
   }
 
   return (
-    <Grid backgroundColor={"#1f2c33"} sx={{width:"30%", height:"100%"}}> 
+    <Stack direction={'column'} backgroundColor={"#1f2c33"} sx={{height:"100vh"}}> 
         <LAppBar/>
         <Divider variant='fullWidth' sx={{bgcolor:"#1f2c33"}}></Divider>
         <SearchAppBar search={search}/>
         <ContactList sContact={props.sContact} selectContact={props.selectContact} searchText={searchText} clonearray={props.clonearray}/>
-    </Grid>
+    </Stack>
   )
 }

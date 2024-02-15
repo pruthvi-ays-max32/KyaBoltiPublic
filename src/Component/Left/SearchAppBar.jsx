@@ -10,7 +10,7 @@ export default function SearchAppBar(props) {
 
   return (
     <Grid display={'flex'} flexDirection={'row'} justifyContent={'space-between'} sx={{ bgcolor: '#111B21', width:"100%"}}>
-      <Box width={'100%'} display={'flex'} margin={1} sx={{ bgcolor: '#111B21', height: "8vh" }}>
+      <Box width={'100%'} display={'flex'} margin={1} sx={{ bgcolor: '#111B21', height: "6vh" }}>
         <Box display={'flex'} flexDirection={'row'} borderRadius={'2px'} width={'90%'} bgcolor={'#202C33'} sx={{ border: '0.5px ', borderRadius: '6px', height: '5vh' }}>
           <IconButton>
             <SearchIcon sx={{ color: "white", height: "20px" }} />
@@ -23,7 +23,7 @@ export default function SearchAppBar(props) {
         </Box>
         <Box>
           <IconButton>
-            <FilterListIcon sx={{ color: 'white' }} />
+            <FilterListIcon sx={{ color: 'white', height:"20px" }} />
           </IconButton>
         </Box>
       </Box>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Box, Divider, Grid, IconButton, List, ListItem, Typography,  } from '@mui/material'
+import { Avatar, Box, Divider, Stack, IconButton, List, ListItem, Typography,  } from '@mui/material'
 
 import DoneIcon from '@mui/icons-material/Done';
 export default function ContactList(props) { 
@@ -9,25 +9,21 @@ export default function ContactList(props) {
     )
 
     return (
-      <Box display={'flex'} flexDirection='column' bgcolor={"#111B21"} width={"100%"}>
-        <List sx={{ maxHeight: '77vh', overflowY: 'scroll', scrollbarWidth: 'thin', width:"100%", scrollbarColor: "rgba(var(--white-rgb),.16)"}}>
+      <Box display={'flex'} flexDirection='column' bgcolor={"#111B21"}  height={'calc(100vh - 6vh - 9vh)'}>
+        <List sx={{ maxHeight: '78vh', overflowY: 'scroll', scrollbarWidth: 'thin',  scrollbarColor: "rgba(var(--white-rgb),.16)"}}>
           {FilterArray.map((contact, index) => (
             <>
-              <ListItem sx={{width:'100%'}} key={index} onClick={() => {
+              <ListItem key={index} onClick={() => {
                 // console.log("??????????????",contact)
                 props.selectContact(contact)
               }}>
-                <Box display={'flex'} flexDirection={'row'} width={'100%'}>
+                <Box display={'flex'} flexDirection={'row'} sx={{width:"100%"}}>
                   <Avatar />
-                  <Box display={'flex'} flexDirection={'column'} ml={2} >
-                      <Grid container justifyContent='space-between' >
-                          <Grid item md={10}>
+                  <Box display={'flex'} flexDirection={'column'} ml={2} sx={{width:"100%"}}>
+                      <Stack direction={"row"} justifyContent='space-between' >      
                           <Typography variant='body1' color={'white'}> {contact.name} </Typography>
-                          </Grid>     
-                          <Grid item md={2}>
-                          <Typography variant="caption" color={'whitesmoke'}>{contact.messages[contact.messages.length-1].time}</Typography>
-                          </Grid>
-                      </Grid>
+                          <Typography variant="caption" color={'whitesmoke'}>{contact.messages[contact.messages.length-1].time}</Typography>                       
+                      </Stack>
                     <Box display={'flex'} flexDirection={'row'}>             
                       <Box>
                         <IconButton>

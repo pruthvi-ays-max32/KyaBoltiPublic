@@ -7,7 +7,7 @@ export default function LAppBar() {
   return (
 
 
-    <Grid container  width={"100%"} height={'9vh'} display={'flex'} alignItems={'center'} bgcolor={'#1f2c33'} padding={'2px 2px'} justifyContent={'space-between'}>
+    <Grid container  width={"100%"} height={'9vh'} display={'flex'} flexDirection={"row"} alignItems={'center'} bgcolor={'#1f2c33'} padding={'2px 2px'} justifyContent={'space-between'}>
       <Grid item ml={1} >
         <Avatar/>
       </Grid> 

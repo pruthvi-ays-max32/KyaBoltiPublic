@@ -12,12 +12,20 @@ export default function RightComponent(props) {
   const backgroundImageUrl = `url(${background})`;
   const containerStyle = {
     backgroundImage: backgroundImageUrl,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+
   };
 
   const backgroundImageUrl1 = `url(${chatbg})`;
 
   const containerStyle1 = {
     backgroundImage: backgroundImageUrl1,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+
   };
 
   
@@ -25,10 +33,10 @@ export default function RightComponent(props) {
   if (props.sContact !== null) {
     return (
    
-      <Box sx={{width:"70%", height:"100vh"}} display="flex" justifyContent="center" flexDirection={'column'} alignItems={'center'}>
+      <Box sx={{height:"100vh"}} display="flex" justifyContent="center" flexDirection={'column'} alignItems={'center'}>
 
         <Box height={'9.6vh'} width={'100%'} bgcolor={'#1f2c33'}>
-          <RAppBar sContact={props.sContact} />
+          <RAppBar sContact={props.sContact} onBackButton={props.onBackButton}/>
         </Box>
 
         <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh", scrollbarColor:"rgba(var(--white-rgb),.16)"}}>
@@ -36,7 +44,7 @@ export default function RightComponent(props) {
         </Box>
 
         <Box height={'9vh'} width={'100%'} bgcolor={'#1f2c33'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>
-          <Rfooter display={props.display}/>
+          <Rfooter display={props.display} />
         </Box>
 
       </Box>
@@ -46,7 +54,7 @@ export default function RightComponent(props) {
 
   else {
     return (
-      <Grid style={containerStyle} backgroundColor={"222E35"} sx={{width:"70%", height:"100vh"}} display="flex" >
+      <Grid style={containerStyle} backgroundColor={"222E35"} sx={{height:"100vh"}} display="flex" >
 
       </Grid>
     )

@@ -1,4 +1,4 @@
-import { Grid} from '@mui/material'
+import {Stack} from '@mui/material'
  export default function LeftIcons() {
     function NewChat(){
         return(
@@ -31,13 +31,12 @@ import { Grid} from '@mui/material'
         )
     }
     return(
-        <Grid container gap={2}> 
+        <Stack direction={'row'} container gap={2}> 
             <Groups/>
             <Status/>
             <Channels/>
             <NewChat/>
-            <MenuBar/>  
-             
-        </Grid>
+            <MenuBar/>               
+        </Stack>
     )
 }

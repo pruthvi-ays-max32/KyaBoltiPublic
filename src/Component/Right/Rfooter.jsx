@@ -19,7 +19,7 @@ export default function Rfooter(props) {
 
   return (
     <Grid width={'100%'} alignItems={"center"}  display={'flex'} justifyContent={'space-between'} sx={{alignItems:'center'}} >
-        <Box textAlign={'start'} display={'flex'} flexDirection={'row'} m={1}>
+        <Box textAlign={'start'} display={'flex'} flexDirection={'row'} mt={1}>
         <IconButton>
             <InsertEmoticonIcon sx={{
               justifyItems:"center",
@@ -54,7 +54,7 @@ export default function Rfooter(props) {
 
         }}>
             <SendIcon sx={{
-              color:"white"
+              color:"white",
             }} />
           </IconButton>
         </Box>   
