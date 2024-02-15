@@ -1,5 +1,5 @@
 import React from 'react'
-import { Avatar, Box, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Typography,  } from '@mui/material'
+import { Avatar, Box, Divider, Grid, IconButton, List, ListItem, Typography,  } from '@mui/material'
 
 import DoneIcon from '@mui/icons-material/Done';
 export default function ContactList(props) { 
@@ -9,8 +9,8 @@ export default function ContactList(props) {
     )
 
     return (
-      <Box display={'flex'} flexDirection='column' bgcolor={"#111B21"}>
-        <List sx={{ maxHeight: '77vh', overflowY: 'scroll', scrollbarWidth: 'thin', width:"100%"}}>
+      <Box display={'flex'} flexDirection='column' bgcolor={"#111B21"} width={"100%"}>
+        <List sx={{ maxHeight: '77vh', overflowY: 'scroll', scrollbarWidth: 'thin', width:"100%", scrollbarColor: "rgba(var(--white-rgb),.16)"}}>
           {FilterArray.map((contact, index) => (
             <>
               <ListItem sx={{width:'100%'}} key={index} onClick={() => {
@@ -25,7 +25,7 @@ export default function ContactList(props) {
                           <Typography variant='body1' color={'white'}> {contact.name} </Typography>
                           </Grid>     
                           <Grid item md={2}>
-                          <Typography variant="caption" color={'whitesmoke'}>{contact.messages[0].time}</Typography>
+                          <Typography variant="caption" color={'whitesmoke'}>{contact.messages[contact.messages.length-1].time}</Typography>
                           </Grid>
                       </Grid>
                     <Box display={'flex'} flexDirection={'row'}>             
@@ -35,7 +35,7 @@ export default function ContactList(props) {
                         </IconButton>
                       </Box>
                       <Box>
-                        <Typography variant='caption' color={'whitesmoke'}> {contact.messages[0].msg}</Typography>
+                        <Typography variant='caption' color={'whitesmoke'}> {contact.messages[contact.messages.length-1].msg}</Typography>
                       </Box>
                     </Box>
                   </Box>

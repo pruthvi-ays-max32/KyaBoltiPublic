@@ -22,7 +22,7 @@ export default function HomePage() {
         { id:10, name: "Shejal", contactNo: "7219070099", messages: [{ msg: "Office Kas Chalu.", time: "10:30pm" }] },
     ])
 
-    let clonearray = [... Contactlist]
+    let clonearray = [...Contactlist]
     // console.log(clonearray)
 
     const [sContact, setsContact] = useState(null)
@@ -35,10 +35,10 @@ export default function HomePage() {
     
 
     function display(messageArr) {
-        console.log("000000000",sContact["id"]-1)
+        // console.log("000000000",sContact["id"]-1)
         clonearray[sContact["id"]-1].messages.push({msg:messageArr, time:time})
         setContactlist(clonearray)
-        console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ", clonearray[sContact["id"]-1])
+        // console.log("QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ", clonearray[sContact["id"]-1])
     }
 
     return (

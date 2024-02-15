@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import RAppBar from './Right/RAppBar'
 import Rfooter from './Right/Rfooter'
 import ChatDisp from './Right/ChatDisp'
@@ -24,13 +24,14 @@ export default function RightComponent(props) {
 
   if (props.sContact !== null) {
     return (
+   
       <Box sx={{width:"70%", height:"100vh"}} display="flex" justifyContent="center" flexDirection={'column'} alignItems={'center'}>
 
         <Box height={'9.6vh'} width={'100%'} bgcolor={'#1f2c33'}>
           <RAppBar sContact={props.sContact} />
         </Box>
 
-        <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh"}}>
+        <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh", scrollbarColor:"rgba(var(--white-rgb),.16)"}}>
           <ChatDisp sContact={props.sContact} messageArr={props.messageArr} display={props.display}/>
         </Box>
 
@@ -39,14 +40,15 @@ export default function RightComponent(props) {
         </Box>
 
       </Box>
+
     )
   }
 
   else {
     return (
-      <Box style={containerStyle} backgroundColor={"222E35"} sx={{width:"70%", height:"100vh"}} display="flex" >
+      <Grid style={containerStyle} backgroundColor={"222E35"} sx={{width:"70%", height:"100vh"}} display="flex" >
 
-      </Box>
+      </Grid>
     )
   }
 }

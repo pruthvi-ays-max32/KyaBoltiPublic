@@ -31,7 +31,7 @@ import { Grid} from '@mui/material'
         )
     }
     return(
-        <Grid container gap={3} mr={3}> 
+        <Grid container gap={2}> 
             <Groups/>
             <Status/>
             <Channels/>
