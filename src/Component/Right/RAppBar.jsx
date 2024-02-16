@@ -10,7 +10,7 @@ export default function RAppBar(props) {
         <Box display={'flex'} justifyContent={'space-between'} flexDirection={'row'} border={'1px solid #1f2c33'} p={'6.6px 0px'}>
             <Box display={'flex'} sx={{ alignItems: 'center' }}>
 
-                <ArrowBackIcon sx={{ display:{ xs :props.sContact ? 'block' : 'none', sm:"none"}}} onClick={props.onBackButton}/>
+                <ArrowBackIcon sx={{ color:"white", display:{ xs :props.sContact ? 'block' : 'none', sm:"none"}}} onClick={props.onBackButton}/>
 
                 <Box ml={2}>
                     <Avatar />
