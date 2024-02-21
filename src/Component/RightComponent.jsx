@@ -5,7 +5,7 @@ import Rfooter from './Right/Rfooter'
 import ChatDisp from './Right/ChatDisp'
 import background from './background.png'
 import chatbg from './chatbackground.jpeg'
-
+import { useSelector } from 'react-redux'
 
 export default function RightComponent(props) {
 
@@ -28,19 +28,20 @@ export default function RightComponent(props) {
 
   };
 
-  
+  const selectedContact = useSelector((state)=>state.selectedContact.sContact)
+  // console.log("BBBBBB", selectedContact)
 
-  if (props.sContact !== null) {
+  if (selectedContact !== null) {
     return (
    
       <Box sx={{height:"100vh"}} display="flex" justifyContent="center" flexDirection={'column'} alignItems={'center'}>
 
         <Box height={'9.6vh'} width={'100%'} bgcolor={'#1f2c33'}>
-          <RAppBar sContact={props.sContact} onBackButton={props.onBackButton}/>
+          <RAppBar onBackButton={props.onBackButton}/>
         </Box>
 
         <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh", scrollbarColor:"rgba(var(--white-rgb),.16)"}}>
-          <ChatDisp sContact={props.sContact} messageArr={props.messageArr} display={props.display}/>
+          <ChatDisp messageArr={props.messageArr} display={props.display}/>
         </Box>
 
         <Box height={'9vh'} width={'100%'} bgcolor={'#1f2c33'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>

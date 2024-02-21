@@ -1,9 +1,12 @@
 import React from 'react'
 import { Box, Typography, Paper } from '@mui/material'
-export default function ChatDisp(props) {
+import {useSelector} from 'react-redux';
 
-  const messages = props.sContact.messages;
-  
+export default function ChatDisp(props) {
+  const selectedContact = useSelector((state)=>state.selectedContact.sContact)
+  console.log("AAAAAA", selectedContact)
+  const messages = selectedContact.messages;
+  console.log(messages)
 
   return (
     <Box m={2} display={'flex'} flexDirection={"row"} justifyContent={'flex-end'} maxWidth={"90%"}>

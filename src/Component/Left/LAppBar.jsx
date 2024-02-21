@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Avatar } from '@mui/material'
+import { Grid, Avatar } from '@mui/material'
 import LeftIcons from './Licons';
 
 

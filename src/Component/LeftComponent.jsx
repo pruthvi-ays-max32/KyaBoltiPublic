@@ -20,7 +20,7 @@ export default function LeftComponent(props) {
         <LAppBar/>
         <Divider variant='fullWidth' sx={{bgcolor:"#1f2c33"}}></Divider>
         <SearchAppBar search={search}/>
-        <ContactList sContact={props.sContact} selectContact={props.selectContact} searchText={searchText} clonearray={props.clonearray}/>
+        <ContactList searchText={searchText} clonearray={props.clonearray}/>
     </Stack>
   )
 }

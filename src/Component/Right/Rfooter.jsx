@@ -1,15 +1,19 @@
 import React from 'react'
-import { Box, IconButton, Paper, TextField, Grid } from '@mui/material'
+import { Box, IconButton, Grid } from '@mui/material'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AddIcon from '@mui/icons-material/Add';
 import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import SendIcon from '@mui/icons-material/Send';
 import {InputBase} from '@mui/material';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { useState } from 'react';
 
 
 export default function Rfooter(props) {
+
+  const selectedContact = useSelector((state)=>state.selectedContact.sContact.messages)
+  console.log("UUUUUUUUUUU",selectedContact)
   const [messageArr, setmessageArr] = useState("")
   console.log("$$$$$$$$$$$$$$$$$$$", messageArr)
 
@@ -51,7 +55,6 @@ export default function Rfooter(props) {
         <IconButton onClick={()=>{
             props.display(messageArr)
             setmessageArr("")
-
         }}>
             <SendIcon sx={{
               color:"white",
