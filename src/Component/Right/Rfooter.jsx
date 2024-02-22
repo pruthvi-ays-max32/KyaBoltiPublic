@@ -2,23 +2,23 @@ import React from 'react'
 import { Box, IconButton, Grid } from '@mui/material'
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AddIcon from '@mui/icons-material/Add';
-import KeyboardVoiceIcon from '@mui/icons-material/KeyboardVoice';
 import SendIcon from '@mui/icons-material/Send';
 import {InputBase} from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useState } from 'react';
+import {actioncreater} from '../../app/Slices/actions'
+import moment from 'moment';
 
-
-export default function Rfooter(props) {
-
-  const selectedContact = useSelector((state)=>state.selectedContact.sContact.messages)
-  console.log("UUUUUUUUUUU",selectedContact)
-  const [messageArr, setmessageArr] = useState("")
-  console.log("$$$$$$$$$$$$$$$$$$$", messageArr)
+export default function Rfooter() {
+  var time = new Date();
+  time = moment().format('LT'); 
+  const sContact = useSelector((state)=>state.selectedContact.sContact)
+  const dispatch = useDispatch();
+  const tempmsg = {msg:'', time:''}
+  const [newmessage, setnewmessage] = useState(tempmsg)
 
   function updateRply(e) {
-      setmessageArr(e.target.value)
+      setnewmessage({msg: e.target.value, time:time})
   }
 
   return (
@@ -40,22 +40,17 @@ export default function Rfooter(props) {
         </Box>
 
         <Box width={"80%"} textAlign={"center"}>
-          <InputBase value={messageArr}  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"#2A3942", border:'0.5px solid grey', borderRadius:'6px'}} onChange={(e)=>{
+          <InputBase value={newmessage.msg}  placeholder={'  Type A Message'} sx={{width:'100%', color:'white', bgcolor:"#2A3942", border:'0.5px solid grey', borderRadius:'6px'}} onChange={(e)=>{
               updateRply(e)
           }}></InputBase>
         </Box>
 
         <Box display={'flex'} flexDirection={'row'}>     
-          {/* <IconButton>
-            <KeyboardVoiceIcon sx={{
-              color:"white"
-            }} />
-          </IconButton> */}
-          
-        <IconButton onClick={()=>{
-            props.display(messageArr)
-            setmessageArr("")
-        }}>
+
+        <IconButton onClick={()=> {
+          dispatch(actioncreater({sContact,newmessage}));
+          dispatch(actioncreater({sContact, newmessage}))
+          setnewmessage(tempmsg)}}>
             <SendIcon sx={{
               color:"white",
             }} />

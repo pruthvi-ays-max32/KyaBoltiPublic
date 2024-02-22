@@ -37,7 +37,7 @@ export default function RightComponent(props) {
       <Box sx={{height:"100vh"}} display="flex" justifyContent="center" flexDirection={'column'} alignItems={'center'}>
 
         <Box height={'9.6vh'} width={'100%'} bgcolor={'#1f2c33'}>
-          <RAppBar onBackButton={props.onBackButton}/>
+          <RAppBar/>
         </Box>
 
         <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh", scrollbarColor:"rgba(var(--white-rgb),.16)"}}>

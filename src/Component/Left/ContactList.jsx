@@ -1,24 +1,17 @@
 import React from 'react'
 import { Avatar, Box, Divider, Stack, IconButton, List, ListItem, Typography } from '@mui/material'
-
 import DoneIcon from '@mui/icons-material/Done';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { setsContact } from '../../app/Slices/SelectContactSlice/sContact';
 
 export default function ContactList(props) { 
 
-
   const contactState = useSelector((state) => state.contactState.contacts);
-  // console.log("Hello",contactState)
-  // const selectedContact = useSelector((state)=>state.selectedContact.sContact)
   const dispatch = useDispatch();
-  //
+
     const FilterArray = contactState.filter((contact)=>
       contact.name.toLowerCase().includes(props.searchText.toLowerCase())
     )
-
-    // console.log("UUUU",selectedContact)
 
     return (
       <Box display={'flex'} flexDirection='column' bgcolor={"#111B21"}  height={'calc(100vh - 6vh - 9vh)'}>
@@ -26,7 +19,7 @@ export default function ContactList(props) {
           {FilterArray.map((contact, index) => (
             <>
               <ListItem key={index} onClick={
-                () =>dispatch(setsContact(contact))
+                () =>(dispatch(setsContact(contact)))
               }>
                 <Box display={'flex'} flexDirection={'row'} sx={{width:"100%"}}>
                   <Avatar />

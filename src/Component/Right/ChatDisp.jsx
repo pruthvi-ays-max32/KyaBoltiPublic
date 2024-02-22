@@ -2,16 +2,17 @@ import React from 'react'
 import { Box, Typography, Paper } from '@mui/material'
 import {useSelector} from 'react-redux';
 
-export default function ChatDisp(props) {
+export default function ChatDisp() {
   const selectedContact = useSelector((state)=>state.selectedContact.sContact)
-  console.log("AAAAAA", selectedContact)
   const messages = selectedContact.messages;
-  console.log(messages)
+
+  const contactState = useSelector((state) => state.contactState.contacts);
+  // console.log(contactState)
 
   return (
-    <Box m={2} display={'flex'} flexDirection={"row"} justifyContent={'flex-end'} maxWidth={"90%"}>
+    <Box m={2} display={'flex'} flexDirection={"row"} justifyContent={'flex-end'} maxWidth={"90%"} >
 
-      <Box color={'white'} >
+      <Box color={'white'}>
         {
           messages.map((message, index) => (
             <Box display={'flex'} justifyContent={"flex-end"} >       
