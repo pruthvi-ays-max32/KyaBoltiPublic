@@ -6,12 +6,11 @@ import SearchAppBar from './Left/SearchAppBar'
 
 import { useState } from 'react'
 
-export default function LeftComponent(props) {
+export default function LeftComponent() {
 
 
   const [searchText, setSearchText] = useState("")
   function search(e){
-    // console.log("EEEEEEEEEEEEE",e.target.value)
     setSearchText(e.target.value)
   }
 

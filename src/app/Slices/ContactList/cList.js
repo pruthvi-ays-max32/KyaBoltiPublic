@@ -19,20 +19,12 @@ export const cListSlice = createSlice({
     name:"cList",
     initialState,
     reducers : {
-        // setContactList : (state, action) =>{
-        //     state.contacts = action.payload
-        // },
-
-        setSelectedContactMsg : (state, action) =>{
-            // console.log(action.payload.sContact)
-            const {sContact,newmessage}= action.payload;
-            const index = state.contacts.findIndex((contact)=>contact.id===action.payload.sContact.id)
-            
+        setSelectedContactMsg : (state, action) =>{         
+            const index = state.contacts.findIndex((contact)=>contact.id===action.payload.sContact.id)    
             state.contacts[index].messages.push(action.payload.newmessage)
-            // console.log("ghghghghghghghghg",state.contacts[index].messages)
         }
     }
 })
 
-export const {setContactList,setSelectedContactMsg} = cListSlice.actions
+export const {setSelectedContactMsg} = cListSlice.actions
 export default cListSlice.reducer

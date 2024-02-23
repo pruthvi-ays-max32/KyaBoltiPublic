@@ -6,16 +6,13 @@ import {useSelector} from 'react-redux';
 
 export default function HomePage() {
     const selectedContact = useSelector((state)=>state.selectedContact.sContact)
-    // console.log(selectedContact)
 
     return (
         <Grid container direction={'row'} height={'100%'}>
             <Grid item  sm={4} md={4} lg={3.5} xl={4} sx={{display:{xs:(selectedContact)? 'none':'block', sm:'block'}}}>
                 <LeftComponent />
             </Grid>
-            {/* <Grid item xs={0} sm={0} md={0.1} lg={0.3}>
-                <Box sx={{ border: ".05px solid #2f3b44" }} />
-            </Grid> */}
+         
             <Grid item sm={8} md={8} lg={8.5} xl={8} xs={12} sx={{display:{xs:(selectedContact)? 'block':'none', sm:'block'}}}>
                 <RightComponent />
             </Grid>

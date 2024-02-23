@@ -7,7 +7,6 @@ export default function ChatDisp() {
   const messages = selectedContact.messages;
 
   const contactState = useSelector((state) => state.contactState.contacts);
-  // console.log(contactState)
 
   return (
     <Box m={2} display={'flex'} flexDirection={"row"} justifyContent={'flex-end'} maxWidth={"90%"} >
