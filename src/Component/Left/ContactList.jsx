@@ -8,6 +8,7 @@ export default function ContactList(props) {
 
   const contactState = useSelector((state) => state.contactState.contacts);
   const dispatch = useDispatch();
+  const sContact = useSelector((state)=> state.selectedContact.sContact)
 
     const FilterArray = contactState.filter((contact)=>
       contact.name.toLowerCase().includes(props.searchText.toLowerCase())
@@ -19,7 +20,7 @@ export default function ContactList(props) {
           {FilterArray.map((contact, index) => (
             <>
               <ListItem key={index} onClick={
-                () =>(dispatch(setsContact(contact)))
+                () =>(dispatch(setsContact(contact)), console.log(index))
               }>
                 <Box display={'flex'} flexDirection={'row'} sx={{width:"100%"}}>
                   <Avatar />

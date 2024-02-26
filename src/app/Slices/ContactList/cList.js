@@ -19,9 +19,8 @@ export const cListSlice = createSlice({
     name:"cList",
     initialState,
     reducers : {
-        setSelectedContactMsg : (state, action) =>{         
-            const index = state.contacts.findIndex((contact)=>contact.id===action.payload.sContact.id)    
-            state.contacts[index].messages.push(action.payload.newmessage)
+        setSelectedContactMsg : (state, action) =>{   
+            state.contacts[action.payload.index].messages = action.payload.msgarr
         }
     }
 })

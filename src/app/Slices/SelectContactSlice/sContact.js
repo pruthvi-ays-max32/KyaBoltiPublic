@@ -11,7 +11,7 @@ export const sContactSlice = createSlice({
             state.sContact = action.payload
         },
         setnewmsg: (state,action)=>{
-            state.sContact.messages.push(action.payload.newmessage)
+            state.sContact.messages.push(action.payload)
         }
     }
 })

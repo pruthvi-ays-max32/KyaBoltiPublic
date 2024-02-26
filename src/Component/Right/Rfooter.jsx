@@ -12,10 +12,17 @@ import moment from 'moment';
 export default function Rfooter() {
   var time = new Date();
   time = moment().format('LT');
-  const sContact = useSelector((state) => state.selectedContact.sContact)
   const dispatch = useDispatch();
   const tempmsg = { msg: '', time: '' }
   const [newmessage, setnewmessage] = useState(tempmsg)
+
+  function handleOnClick (){
+      if(newmessage.msg !==''){
+        dispatch(actioncreater(newmessage));
+        dispatch(actioncreater1(newmessage));
+        setnewmessage(tempmsg)
+      }     
+  }
 
   return (
     <Grid width={'100%'} alignItems={"center"} display={'flex'} justifyContent={'space-between'} sx={{ alignItems: 'center' }} >
@@ -37,11 +44,7 @@ export default function Rfooter() {
       </Box>
 
       <Box display={'flex'} flexDirection={'row'}>
-        <IconButton onClick={() => {
-          dispatch(actioncreater({ sContact, newmessage }));
-          dispatch(actioncreater1({ sContact, newmessage }));
-          setnewmessage(tempmsg)
-        }}>
+        <IconButton onClick={handleOnClick}>
           <SendIcon sx={{ color: "white" }} />
         </IconButton>
       </Box>
