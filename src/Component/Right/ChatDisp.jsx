@@ -3,14 +3,13 @@ import { Box, Typography, Paper } from '@mui/material'
 import {useSelector} from 'react-redux';
 
 export default function ChatDisp() {
-  const selectedContact = useSelector((state)=>state.selectedContact.sContact)
-  const messages = selectedContact.messages;
-
+  const sContact = useSelector((state)=>state.sContact.sContact)
   const contactState = useSelector((state) => state.contactState.contacts);
+  const index = contactState.findIndex((contact)=>contact.id===sContact)
+  const messages = [...contactState[index].messages]
 
   return (
     <Box m={2} display={'flex'} flexDirection={"row"} justifyContent={'flex-end'} maxWidth={"90%"} >
-
       <Box color={'white'}>
         {
           messages.map((message, index) => (
@@ -27,6 +26,4 @@ export default function ChatDisp() {
       </Box>
     </Box>
   )
-
-
 }

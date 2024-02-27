@@ -1,6 +1,5 @@
 import { actioncreater1 } from "../app/Slices/actions";
 
-
 const mockFn = jest.fn(actioncreater1)
 const msg = {msg : "Hello Vinay", time:"12:00PM"}
 

@@ -8,7 +8,6 @@ import { useState } from 'react'
 
 export default function LeftComponent() {
 
-
   const [searchText, setSearchText] = useState("")
   function search(e){
     setSearchText(e.target.value)

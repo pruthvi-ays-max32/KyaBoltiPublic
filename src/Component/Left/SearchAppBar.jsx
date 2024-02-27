@@ -6,8 +6,6 @@ import { InputBase } from '@mui/material';
 
 export default function SearchAppBar(props) {
 
-  
-
   return (
     <Grid display={'flex'} flexDirection={'row'} justifyContent={'space-between'} sx={{ bgcolor: '#111B21', width:"100%"}}>
       <Box width={'100%'} display={'flex'} margin={1} sx={{ bgcolor: '#111B21', height: "6vh" }}>
@@ -27,7 +25,6 @@ export default function SearchAppBar(props) {
           </IconButton>
         </Box>
       </Box>
-
     </Grid>
   )
 }

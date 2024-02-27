@@ -28,10 +28,9 @@ export default function RightComponent(props) {
 
   };
 
-  const selectedContact = useSelector((state)=>state.selectedContact.sContact)
-  // console.log("BBBBBB", selectedContact)
+  const sContact = useSelector((state)=>state.sContact.sContact)
 
-  if (selectedContact !== null) {
+  if (sContact !== null) {
     return (
    
       <Box sx={{height:"100vh"}} display="flex" justifyContent="center" flexDirection={'column'} alignItems={'center'}>
@@ -41,22 +40,20 @@ export default function RightComponent(props) {
         </Box>
 
         <Box height={'calc(100vh - 9.6vh - 9vh)'}  width={'100%'} style={containerStyle1} sx={{overflowY:'scroll', scrollbarWidth:'thin', maxHeight:"85vh", scrollbarColor:"rgba(var(--white-rgb),.16)"}}>
-          <ChatDisp messageArr={props.messageArr} display={props.display}/>
+          <ChatDisp />
         </Box>
 
         <Box height={'9vh'} width={'100%'} bgcolor={'#1f2c33'} alignItems={'center'} justifyContent={'center'} justifyItems={'center'}>
-          <Rfooter display={props.display} />
+          <Rfooter />
         </Box>
 
       </Box>
-
     )
   }
 
   else {
     return (
       <Grid style={containerStyle} backgroundColor={"222E35"} sx={{height:"100vh"}} display="flex" >
-
       </Grid>
     )
   }

@@ -9,9 +9,6 @@ export const sContactSlice = createSlice({
     reducers:{
         setsContact : (state, action)=>{
             state.sContact = action.payload
-        },
-        setnewmsg: (state,action)=>{
-            state.sContact.messages.push(action.payload)
         }
     }
 })

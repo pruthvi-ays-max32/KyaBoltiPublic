@@ -4,9 +4,9 @@ import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 import AddIcon from '@mui/icons-material/Add';
 import SendIcon from '@mui/icons-material/Send';
 import { InputBase } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { actioncreater, actioncreater1 } from '../../app/Slices/actions'
+import { actioncreater } from '../../app/Slices/actions'
 import moment from 'moment';
 
 export default function Rfooter() {
@@ -19,13 +19,13 @@ export default function Rfooter() {
   function handleOnClick (){
       if(newmessage.msg !==''){
         dispatch(actioncreater(newmessage));
-        dispatch(actioncreater1(newmessage));
         setnewmessage(tempmsg)
       }     
   }
 
   return (
     <Grid width={'100%'} alignItems={"center"} display={'flex'} justifyContent={'space-between'} sx={{ alignItems: 'center' }} >
+
       <Box textAlign={'start'} display={'flex'} flexDirection={'row'} mt={1}>
         <IconButton>
           <InsertEmoticonIcon sx={{ justifyItems: "center", color: "white" }} />
@@ -48,6 +48,7 @@ export default function Rfooter() {
           <SendIcon sx={{ color: "white" }} />
         </IconButton>
       </Box>
+      
     </Grid>
   )
 }
