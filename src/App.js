@@ -1,8 +1,9 @@
 import './App.css';
 import React from 'react';
 import HomePage from './Component/HomePage';
+
 function App() {
-  return(
+  return (
     <box>
       <HomePage/>
     </box>

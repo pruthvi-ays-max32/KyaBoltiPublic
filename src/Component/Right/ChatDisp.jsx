@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box, Typography, Paper } from '@mui/material'
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { setsContact } from '../../app/Slices/SelectContactSlice/sContact';
+
 
 export default function ChatDisp() {
-  const sContact = useSelector((state)=>state.sContact.sContact)
+  // const sContact = useSelector((state)=>state.sContact.sContact)
+  const params = useParams()
+  const selectedContact = parseInt(params.id)
+
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    const id = selectedContact
+    dispatch(setsContact(id))
+  })
+
   const contactState = useSelector((state) => state.contactState.contacts);
-  const index = contactState.findIndex((contact)=>contact.id===sContact)
+  const index = contactState.findIndex((contact)=>contact.id===selectedContact)
   const messages = [...contactState[index].messages]
 
   return (

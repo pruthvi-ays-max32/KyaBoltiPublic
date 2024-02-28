@@ -1,21 +1,21 @@
 import React from 'react'
-import LeftComponent from './LeftComponent'
-import RightComponent from './RightComponent'
-import {Grid } from '@mui/material'
-import {useSelector} from 'react-redux';
+import { Grid } from '@mui/material'
+import DeskTop from './DeskTop';
+import { useMediaQuery, useTheme } from '@mui/material';
+import Mobile from './Mobile';
 
 export default function HomePage() {
-    const sContact = useSelector((state)=>state.sContact.sContact)
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
     return (
         <Grid container direction={'row'} height={'100%'}>
-            <Grid item  sm={4} md={4} lg={3.5} xl={4} sx={{display:{xs:(sContact)? 'none':'block', sm:'block'}}}>
-                <LeftComponent />
-            </Grid>
-         
-            <Grid item sm={8} md={8} lg={8.5} xl={8} xs={12} sx={{display:{xs:(sContact)? 'block':'none', sm:'block'}}}>
-                <RightComponent />
-            </Grid>
+            {isMobile ? (
+                <Mobile />
+            ) : (
+                <DeskTop />
+            )}
         </Grid>
     )
 }
