@@ -17,7 +17,7 @@ export default function Rfooter() {
   const [newmessage, setnewmessage] = useState(tempmsg)
 
   function handleOnClick (){
-      if(newmessage.msg !==''){
+      if(newmessage.msg.trim()){
         dispatch(actioncreater(newmessage));
         setnewmessage(tempmsg)
       }     
