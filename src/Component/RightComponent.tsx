@@ -1,7 +1,6 @@
-import React from 'react'
 import { Box } from '@mui/material'
-import RSDisplay from '../testComp/RSDisplay'
-import RIDisplay from '../testComp/RIDisplay'
+import RIDisplay from '../testComp/RIDisplay';
+import RSDisplay from '../testComp/RSDisplay';
 import { Route, Routes } from 'react-router-dom'
 
 export default function RightComponent() {
