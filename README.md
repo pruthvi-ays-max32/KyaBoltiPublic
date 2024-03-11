@@ -1,2 +1,3 @@
 # KyaBoltiPublic
 Whatsapp Clone ...
+I am working on Project "Kya Bolti Public" in which I am trying to build a whatsapp web clone using React JS. I am Currently Learning React JS, Routing, Typescript and so on...,  for the use of this learning in real world I am building this project.
