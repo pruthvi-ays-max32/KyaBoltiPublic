@@ -2,17 +2,21 @@ import { useEffect } from 'react'
 import { Box, Typography, Paper } from '@mui/material'
 import {useSelector, useDispatch} from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { setsContact } from '../../app/Slices/SelectContactSlice/sContact';
+import { Dispatch } from '@reduxjs/toolkit';
+import { setsContact } from '../../app/Slices/SelectContactSlice/sContact.ts';
 
 export default function ChatDisp() {
   const params :any = useParams()
-  const selectedContact = parseInt(params.id)
+  const selectedContact : any = parseInt(params.id)
+  console.log("888888", typeof selectedContact)
 
-  const dispatch = useDispatch()
+  const dispatch:Dispatch = useDispatch()
 
   useEffect(()=>{
-    const id = selectedContact
+    const id:number = selectedContact
     dispatch(setsContact(id))
+    console.log(typeof id)
+
   })
 
   const contactState = useSelector((state : any) => state.contactState.contacts);

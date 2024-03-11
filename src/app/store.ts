@@ -1,7 +1,7 @@
 import { configureStore, combineReducers} from "@reduxjs/toolkit";
 
-import sContact from './Slices/SelectContactSlice/sContact'
-import contactState from './Slices/ContactList/cList'
+import sContact from './Slices/SelectContactSlice/sContact.ts'
+import contactState from './Slices/ContactList/cList.ts'
 
 // import logger from "redux-logger";
 

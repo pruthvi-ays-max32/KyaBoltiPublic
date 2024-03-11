@@ -6,33 +6,29 @@ import SendIcon from '@mui/icons-material/Send';
 import { InputBase } from '@mui/material';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-// import { actioncreater } from '../../app/Slices/actions'
-import {actioncreater} from '../../app/Slices/actions';
+import {actioncreater} from '../../app/Slices/actions.ts';
 import moment from 'moment';
-
 
 interface Messages {
   msg : string,
   time :string,
 } 
 
-
 export default function Rfooter() {
-  var time = new Date();
-  const t = time.toLocaleTimeString(); 
-  // time = moment().format('LT');
+  // let time = new Date();
+  // const t = time.toLocaleTimeString(); 
+  let time = moment().format('LT');
   const dispatch:any = useDispatch();
   const tempmsg : Messages = { msg: '', time: '' }
   const [newmessage, setnewmessage] = useState <Messages> (tempmsg)
-  
 
   function handleOnClick (){
       if(newmessage.msg.trim()){
-        // dispatch(actioncreater(newmessage));
         setnewmessage(tempmsg) 
-        dispatch(actioncreater(newmessage));
-        
-          
+        console.log(actioncreater) 
+        console.log(typeof newmessage, "$$$$$$$$$$$$$");
+        dispatch(actioncreater(newmessage)); 
+            
       }   
 
   }
@@ -52,7 +48,7 @@ export default function Rfooter() {
 
       <Box width={"80%"} textAlign={"center"}>
         <InputBase value={newmessage.msg} placeholder={'  Type A Message'} sx={{ width: '100%', color: 'white', bgcolor: "#2A3942", border: '0.5px solid grey', borderRadius: '6px' }} onChange={(e) => {
-          setnewmessage({ msg: e.target.value, time: t })
+          setnewmessage({ msg: e.target.value, time: time })
         }}>
         </InputBase>
       </Box>

@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface Istate {
-    sContact : any;
-}
+// interface Istate {
+//     sContact : any;
+// }
 
-const initialState : Istate = {
+const initialState : any = {
     sContact : null,
 }
 
@@ -12,7 +12,7 @@ export const sContactSlice = createSlice({
     name : "sContactSlice",
     initialState,
     reducers:{
-        setsContact : (state, action)=>{
+        setsContact : (state, action) : any=>{
             state.sContact = action.payload
         }
     }

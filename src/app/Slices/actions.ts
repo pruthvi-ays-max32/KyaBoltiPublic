@@ -1,5 +1,4 @@
-import { CleaningServices } from '@mui/icons-material'
-import {setSelectedContactMsg} from './ContactList/cList'
+import {setSelectedContactMsg} from './ContactList/cList.ts'
 import { Dispatch } from '@reduxjs/toolkit'
 
 interface Message {
@@ -7,15 +6,16 @@ interface Message {
     time : string,
 }
 
-export const actioncreater = (msg:Message)=>{
+export function actioncreater (msg:Message) : any {
+    // console.log("******************",typeof msg)
     return (dispatch:Dispatch, getState:any)=>{
-        console.log("aaaaaaaaaaaa")
-        const contactState = getState().contactState.contacts
+        // console.log("aaaaaaaaaaaa", msg)
+        const contactState : any= getState().contactState.contacts
         const sContact : number = getState().sContact.sContact
         const index : number = contactState.findIndex((contact : any)=>contact.id===sContact)
         const msgarr : Message[] = [...contactState[index].messages]
-        msgarr.push(msg)
-        
+        // console.log(msgarr)
+        msgarr.push(msg)     
         dispatch(setSelectedContactMsg({index, msgarr}));
     }
 }

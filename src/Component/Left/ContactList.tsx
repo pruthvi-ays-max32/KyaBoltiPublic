@@ -1,7 +1,8 @@
 import { Avatar, Box, Divider, Stack, IconButton, List, ListItem, Typography } from '@mui/material'
 import DoneIcon from '@mui/icons-material/Done';
 import { useDispatch, useSelector } from 'react-redux';
-import {setsContact} from '../../app/Slices/SelectContactSlice/sContact';
+// import {setsContact} from '../../app/Slices/SelectContactSlice/sContact';
+import { setsContact } from '../../app/Slices/SelectContactSlice/sContact.ts';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
