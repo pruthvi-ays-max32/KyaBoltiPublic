@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// interface Istate {
-//     sContact : any;
-// }
-
 const initialState : any = {
     sContact : null,
 }

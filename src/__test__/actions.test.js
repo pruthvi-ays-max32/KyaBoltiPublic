@@ -1,9 +1,7 @@
 import {actioncreater} from '../app/Slices/actions'
 
-
 const mockFn = jest.fn(actioncreater)
 const msg = {msg:"Hello Ram", time:"20:00PM"}
-
 
 test("Should take object as parameter.", ()=>{
     mockFn(msg)
